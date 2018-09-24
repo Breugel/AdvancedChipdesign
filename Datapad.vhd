@@ -47,7 +47,7 @@ architecture logica of Datapad is
 	component Subbytes is 
  		port (  p_in : in std_logic_vector(127 downto 0);
           		s_out : out std_logic_vector(127 downto 0));
-	end
+	end component;
 
 	
 	component ShiftRow is 
@@ -67,7 +67,8 @@ architecture logica of Datapad is
 
 	--signals
 	signal round_counter: std_logic_vector(3 downto 0); --moeten tot 9 kunnen tellen
-	signal FSM: FSM_type;
+	signal curState: FSM_type;
+	signal nextState: FSM_type; 
 	signal chip_enable: std_logic;
 	--/signals
 
@@ -75,58 +76,65 @@ architecture logica of Datapad is
 
 begin	-- Begin van de "logica"
 
-DutyCycle: process(rising_edge (clk))
-	begin
-		if reset = '0' then
-			chip_enable		<= '0';
-			round_counter   <= (others => '0');
-			Data_out 	<= (others => '0');
-			done		<= '0';
-		elsif rising_edge (clk) then
+DutyCycle: process(clk)
+begin
+		if (rising_edge (clk)) then
 			if (ce ='1') 
 			then chip_enable <= '1';
-			else chip_enable <= '0';
+			else chip_enable <= '0';		------------------------------------------------------------------------
 			end if;
 		end if;	 
 end process;
 
 
 
+FSM_switchstate: process(reset, clk)
+begin
+	if (reset = '1') then
+		curState <= initialize; 
+	elsif (rising_edge(clk)) then
+		curState <= nextState; 
+	end if;
+end process;
 
+FSM_nextstate: process (curState)
+begin
+	case curState is
+		when initialize => 
+			round_counter <= (others => '0');
+			nextState <= first_round;
+		when first_round =>
+			round_counter <= round_counter + 1;
+			nextState <= loop_till_nine; 
+	 	when loop_till_nine =>
+			if (round_counter < 10) and (round_counter >= 1) then
+				round_counter <= round_counter + 1;
+			else
+				nextState <= out_loop;
+			end if;
+	 	when out_loop =>
+			nextState <= initialize;
+	end case;
+end process;
 
--- MainProgram: process(rising_edge (clk))
+--
+--FSM_output : process(curState)
 --begin
---	if chip_enable = '1' then	
---		case FSM is
---			when initialize => 
---				FSM <= first_round;
---				round_counter <= (others => '0');
---				--	
---				--
---				--
---			when first_round =>
---				round_counter <= round_counter + 1;
---				-- De vershillende blokken moeten hier nog in
---				FSM <= loop_till_nine;
---	
---			when loop_till_nine =>
---				if(round_counter < 10 and round_counter >= 1 ) then
---					round_counter <= round_counter + 1;
---				-- De vershillende blokken moeten hier nog in
---				else 
---					round_counter <= (others => '0');
---					FSM <= out_loop;
---				-- De vershillende blokken moeten hier nog in
---				end if;
---	
---			when out_loop =>
---				FSM		<= initialize;
---				done		<= '1';
---				chip_enable	<= '0';
---		
---			end case;
---	end if;
---end process;
+--	case curState is
+--		when initialize =>
+--			done <= (others => '0');
+--			round_counter <= (others => '0');
+--			Data_out <= (others => '0');
+--		when firs_round =>
+--			
+--
+--
+--end process 
+--
+
+
+
+
 
 
 end logica;
