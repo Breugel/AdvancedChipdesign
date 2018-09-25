@@ -81,7 +81,7 @@ begin
 		if (rising_edge (clk)) then
 			if (ce ='1') 
 			then chip_enable <= '1';
-			else chip_enable <= '0';
+			else chip_enable <= '0';		------------------------------------------------------------------------
 			end if;
 		end if;	 
 end process;
@@ -99,31 +99,45 @@ end process;
 
 FSM_nextstate: process (curState)
 begin
-	case curState is
-		when initialize => 
-			round_counter <= (others => '0');
-			nextState <= first_round;
-		when first_round =>
-			round_counter <= round_counter + 1;
-			nextState <= loop_till_nine; 
-	 	when loop_till_nine =>
-			if (round_counter < 10) and (round_counter >= 1) then
+	if(chip_enable = '1') then
+		case curState is
+			when initialize => 
+				round_counter <= (others => '0');
+				nextState <= first_round;
+			when first_round =>
 				round_counter <= round_counter + 1;
-			else
-				nextState <= out_loop;
-			end if;
-	 	when out_loop =>
-			nextState <= initialize;
-	end case;
+				nextState <= loop_till_nine; 
+		 	when loop_till_nine =>
+				if (round_counter < 10) and (round_counter >= 1) then
+					round_counter <= round_counter + 1;
+				else
+					nextState <= out_loop;
+				end if;
+		 	when out_loop =>
+				nextState <= initialize;
+		end case;
+	end if;
 end process;
 
 
+FSM_output: process(curState, clk)	-- Moet hier wel een klok in de sensitivity list??
+begin
+	case curState is
+		when initialize =>
+			done <= '0';
+			data_out <= (others => '0');
+			round_counter <= (others => '0');
+		when first_round =>
+			done <= '0';
+		when loop_till_nine =>
+			done <= '0';
+		when out_loop =>
+			done <= '1'; 
+	end case;
 
 
 
-
-
-
+end process; 
 
 
 
