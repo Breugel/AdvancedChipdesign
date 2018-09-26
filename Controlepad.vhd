@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 
-entity Datapad is 
+entity Controlepad is 
 	port (		Key_in_data	: in std_logic_vector (127 downto 0);
 			Data_in_data	: in std_logic_vector (127 downto 0);
 			clk		: in std_logic;
@@ -15,7 +15,7 @@ entity Datapad is
 end entity;
 
 
-architecture logica of Datapad is
+architecture logica of Controlepad is
 
 	type FSM_type is
 	(	initialize,
