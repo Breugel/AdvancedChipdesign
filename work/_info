@@ -9,34 +9,34 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/16.1
 Eaddroundkey
-Z0 w1537700555
+Z0 w1537989131
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z3 dC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign
-Z4 8C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AddRoundKey.vhd
-Z5 FC:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AddRoundKey.vhd
+Z4 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd
+Z5 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd
 l0
 L4
-V@Ng<NG^HOXfcSViG2LR5L2
-!s100 ?>6bLhc3bLdzbNM3R9D`c2
+V[0nLN3GcFzk207TYBh6hT3
+!s100 3HBM9af_ofJEM1T567MQA3
 Z6 OV;C;10.5b;63
 32
-Z7 !s110 1537811964
+Z7 !s110 1537989139
 !i10b 1
-Z8 !s108 1537811963.000000
-Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AddRoundKey.vhd|
-Z10 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AddRoundKey.vhd|
+Z8 !s108 1537989139.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd|
+Z10 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd|
 !i113 1
 Z11 o-work work -2002 -explicit
 Z12 tExplicit 1 CvgOpt 0
 Abehavioral
 R1
 R2
-DEx4 work 11 addroundkey 0 22 @Ng<NG^HOXfcSViG2LR5L2
+DEx4 work 11 addroundkey 0 22 [0nLN3GcFzk207TYBh6hT3
 l14
 L12
-V8VaOco@iND>PTCU9TU<`a0
-!s100 _:O^D03HG[SW>>WXRTY7Z1
+VSo89]NP4m`_OnhL4l^Rk]1
+!s100 ^dQ8gfjU`UTkFI5b1`6Zl1
 R6
 32
 R7
@@ -60,11 +60,11 @@ V[H`iODGOez[F<R@0CTah42
 !s100 ZH1a0b=cPN@jDIK^ZCCOB1
 R6
 32
-R7
+Z16 !s110 1537811964
 !i10b 1
-Z16 !s108 1537811964.000000
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd|
-Z18 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd|
+Z17 !s108 1537811964.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd|
+Z19 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd|
 !i113 1
 R11
 R12
@@ -78,83 +78,83 @@ VG9ObP?RVEC5j?N2B@FlCA3
 !s100 <gzE[Q]`gab;ofhbZ:[ER0
 R6
 32
-R7
-!i10b 1
 R16
+!i10b 1
 R17
 R18
+R19
 !i113 1
 R11
 R12
 Econtrolepad
-Z19 w1537895969
-Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z21 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z20 w1537989820
+Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z22 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R1
 R2
 R3
-Z22 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd
-Z23 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd
+Z23 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd
+Z24 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd
 l0
 L5
-Va9naNfMQ4A1Gbedg@Ff^J2
-!s100 O>GB8S^32lK0=I<RQfh:^2
+VIimV<>_Y=bd2gKT<`zB`L1
+!s100 <>ofQzI=JgXi8ljCkf]m_2
 R6
 32
-Z24 !s110 1537948974
+Z25 !s110 1537989826
 !i10b 1
-Z25 !s108 1537948974.000000
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd|
-Z27 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd|
+Z26 !s108 1537989826.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd|
+Z28 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd|
 !i113 1
 R11
 R12
 Alogica
-R20
 R21
+R22
 R1
 R2
-DEx4 work 11 controlepad 0 22 a9naNfMQ4A1Gbedg@Ff^J2
-l77
-L18
-VPQA`ZMbhF?Z]673hEfoG^2
-!s100 :8UMX9P3RL:UPcSE0<nQK1
+DEx4 work 11 controlepad 0 22 IimV<>_Y=bd2gKT<`zB`L1
+l35
+L17
+V8kzVAANlAJ6FzI5G8;zF90
+!s100 z]9_ndZh_=YhS;OnbfLn62
 R6
 32
-R24
-!i10b 1
 R25
+!i10b 1
 R26
 R27
+R28
 !i113 1
 R11
 R12
 Edatapad
-Z28 w1537892778
-R20
+Z29 w1537892778
 R21
+R22
 R1
 R2
 R3
-R22
 R23
+R24
 l0
 L5
 VH:LBnNbh>^JGioFCln]mo0
 !s100 ijaaf<;MaXeCXZ2BiNe_32
 R6
 32
-Z29 !s110 1537892783
+Z30 !s110 1537892783
 !i10b 1
-Z30 !s108 1537892783.000000
-R26
+Z31 !s108 1537892783.000000
 R27
+R28
 !i113 1
 R11
 R12
 Alogica
-R20
 R21
+R22
 R1
 R2
 DEx4 work 7 datapad 0 22 H:LBnNbh>^JGioFCln]mo0
@@ -164,40 +164,40 @@ VDD4?jkHKFT:klZh]L50:S1
 !s100 eA6UoD4EdF@I]PN^G;Ve11
 R6
 32
-R29
-!i10b 1
 R30
-R26
+!i10b 1
+R31
 R27
+R28
 !i113 1
 R11
 R12
 Ekeyscheduler
-Z31 w1537700668
+Z32 w1537700668
+R22
 R21
-R20
 R1
 R2
 R3
-Z32 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
-Z33 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
+Z33 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
+Z34 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
 l0
 L7
 VzE4Nh;hPgI:N0N655mLc51
 !s100 eXN43V>A787hRB1Eb0GlD0
 R6
 32
-R7
-!i10b 1
 R16
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd|
-Z35 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd|
+!i10b 1
+R17
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd|
+Z36 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd|
 !i113 1
 R11
 R12
 Abehavioral
+R22
 R21
-R20
 R1
 R2
 DEx4 work 12 keyscheduler 0 22 zE4Nh;hPgI:N0N655mLc51
@@ -207,32 +207,75 @@ VZ7Je7BE;YgWSC_Pi_jek80
 !s100 SLXK_L^K30N=78o75RdZz2
 R6
 32
-R7
-!i10b 1
 R16
-R34
+!i10b 1
+R17
 R35
+R36
+!i113 1
+R11
+R12
+Elastround
+Z37 w1537988370
+R21
+R22
+R1
+R2
+R3
+Z38 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd
+Z39 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd
+l0
+L5
+VhAX=4mbGh>ko=HCDiGUMT1
+!s100 gXlnX]A@[d9l0[c;na<E@0
+R6
+32
+Z40 !s110 1537988378
+!i10b 1
+Z41 !s108 1537988378.000000
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd|
+Z43 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd|
+!i113 1
+R11
+R12
+Alogic
+R21
+R22
+R1
+R2
+DEx4 work 9 lastround 0 22 hAX=4mbGh>ko=HCDiGUMT1
+l60
+L19
+Vz<UO8ejcC[4NKhgLiM0mU2
+!s100 gM13cYm;=j8Z[fO@GE@ld0
+R6
+32
+R40
+!i10b 1
+R41
+R42
+R43
 !i113 1
 R11
 R12
 Emixcolumn
-Z36 w1537700638
+Z44 w1537700638
 R1
 R2
 R3
-Z37 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
-Z38 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
+Z45 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
+Z46 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
 l0
 L4
 VCFXn=iE]FWbQb31c`QO0K2
 !s100 8eDUakH_6O4FgIH95>Z?D2
 R6
 32
-R7
-!i10b 1
 R16
-Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd|
-Z40 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd|
+!i10b 1
+R17
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd|
+Z48 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd|
 !i113 1
 R11
 R12
@@ -246,22 +289,22 @@ VO;:3EfMJKUO>TdlYS6m1I1
 !s100 zgoO<00jUMA9<Gl_kVLo31
 R6
 32
-R7
-!i10b 1
 R16
-R39
-R40
+!i10b 1
+R17
+R47
+R48
 !i113 1
 R11
 R12
 Ppkg_aes128
-Z41 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z49 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R1
 R2
-Z42 w1537774634
+Z50 w1537774634
 R3
-Z43 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd
-Z44 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd
+Z51 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd
+Z52 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd
 l0
 L7
 V47572;PD2nX:aN]M8VZdj1
@@ -269,17 +312,17 @@ V47572;PD2nX:aN]M8VZdj1
 R6
 32
 b1
-Z45 !s110 1537774794
+Z53 !s110 1537774794
 !i10b 1
-Z46 !s108 1537774794.000000
-Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd|
-Z48 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd|
+Z54 !s108 1537774794.000000
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd|
+Z56 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/work/PKG_AES128.vhd|
 !i113 1
 R11
 R12
 Bbody
 DPx4 work 10 pkg_aes128 0 22 47572;PD2nX:aN]M8VZdj1
-R41
+R49
 R1
 R2
 l0
@@ -288,66 +331,66 @@ V6B`BK2Hn6ko`DX0EHZbO22
 !s100 ^==F4T4KhoZRc3dRV>Kd[3
 R6
 32
-R45
+R53
 !i10b 1
-R46
-R47
-R48
+R54
+R55
+R56
 !i113 1
 R11
 R12
 Eround
-Z49 w1537951828
-R20
+Z57 w1537990141
 R21
+R22
 R1
 R2
 R3
-Z50 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
-Z51 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
+Z58 8C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
+Z59 FC:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
 l0
 L5
-VPNJkI_bY67NBkbaLmRHX:3
-!s100 ?MZ5X@869h?]Ya[D4eObQ3
+V7DW3oLWJITQTlEi=UH7ic3
+!s100 c?cF[nM[I<YJ?0MQXce:P3
 R6
 32
-Z52 !s110 1537952052
+Z60 !s110 1537990161
 !i10b 1
-Z53 !s108 1537952052.000000
-Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd|
-Z55 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd|
+Z61 !s108 1537990161.000000
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd|
+Z63 !s107 C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd|
 !i113 1
 R11
 R12
 Alogic
-R20
 R21
+R22
 R1
 R2
-DEx4 work 5 round 0 22 PNJkI_bY67NBkbaLmRHX:3
+DEx4 work 5 round 0 22 7DW3oLWJITQTlEi=UH7ic3
 l60
 L19
-VaRHPYIKSM0SS3aai0jz5m2
-!s100 Bzz_?T9Xi[3^H][2b2>f72
+Z64 VEjF@j2nP:nXL;d>mczzgJ2
+Z65 !s100 ?a;XbfElT2dNABHXa4IX=3
 R6
 32
-R52
+R60
 !i10b 1
-R53
-R54
-R55
+R61
+R62
+R63
 !i113 1
 R11
 R12
 Erounds
-Z56 w1537949188
-R20
+Z66 w1537949188
 R21
+R22
 R1
 R2
 R3
-R50
-R51
+R58
+R59
 l0
 L5
 V]G:PjWIla7eOG85XjG?NE0
@@ -357,14 +400,14 @@ R6
 !s110 1537949192
 !i10b 1
 !s108 1537949192.000000
-R54
-R55
+R62
+R63
 !i113 1
 R11
 R12
 Alogic
-R20
 R21
+R22
 R1
 R2
 DEx4 work 6 rounds 0 22 N@2MB]eQ?;@6l:lJ8TmLD0
@@ -377,29 +420,29 @@ R6
 !s110 1537948970
 !i10b 1
 !s108 1537948970.000000
-R54
-R55
+R62
+R63
 !i113 1
 R11
 R12
 Eshiftrow
-Z57 w1537700783
+Z67 w1537700783
 R1
 R2
 R3
-Z58 8C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd
-Z59 FC:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd
+Z68 8C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd
+Z69 FC:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd
 l0
 L4
 VRLmdHbPV03^K@:JLX78;22
 !s100 ab`;Tz8jz91nmbLamnGSZ0
 R6
 32
-R7
-!i10b 1
 R16
-Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd|
-Z61 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd|
+!i10b 1
+R17
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd|
+Z71 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd|
 !i113 1
 R11
 R12
@@ -413,32 +456,32 @@ VQ:fdaP7JEH?`Oc2WkAgRl1
 !s100 NhW2SBP74n4P58i2m_M4E2
 R6
 32
-R7
-!i10b 1
 R16
-R60
-R61
+!i10b 1
+R17
+R70
+R71
 !i113 1
 R11
 R12
 Esubbytes
-Z62 w1537773686
+Z72 w1537773686
 R1
 R2
 R3
-Z63 8C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd
-Z64 FC:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd
+Z73 8C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd
+Z74 FC:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd
 l0
 L4
 V9NNzak;@ee[1jQRkmUk]91
 !s100 ]92OJ4GzYon5hbA<kTA2E2
 R6
 32
-R7
-!i10b 1
 R16
-Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd|
-Z66 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd|
+!i10b 1
+R17
+Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd|
+Z76 !s107 C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd|
 !i113 1
 R11
 R12
@@ -452,11 +495,11 @@ VBWd0d97HBNjk_CEFl78gW0
 !s100 _eh^=Ug16a8Zd=XenAR>40
 R6
 32
-R7
-!i10b 1
 R16
-R65
-R66
+!i10b 1
+R17
+R75
+R76
 !i113 1
 R11
 R12

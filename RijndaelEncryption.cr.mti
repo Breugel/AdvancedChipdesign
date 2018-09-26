@@ -8,6 +8,24 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Controlepad
 -- Compiling architecture logica of Controlepad
 
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Lastround
+-- Compiling architecture Logic of Lastround
+
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity MixColumn
+-- Compiling architecture MixColumn_arch of MixColumn
+
 } {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -18,14 +36,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Keyscheduler
 -- Compiling architecture Behavioral of Keyscheduler
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity MixColumn
--- Compiling architecture MixColumn_arch of MixColumn
-
 } {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Subbytes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -34,13 +44,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Subbytes
 -- Compiling architecture program of Subbytes
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/shiftrow.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd}
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity ShiftRow
--- Compiling architecture ShiftRow_arch of ShiftRow
+-- Compiling entity AddRoundKey
+-- Compiling architecture Behavioral of AddRoundKey
 
 } {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/bytesub.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -50,12 +60,12 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ByteSub
 -- Compiling architecture internals of ByteSub
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AddRoundKey.vhd}
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/shiftrow.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity AddRoundKey
--- Compiling architecture Behavioral of AddRoundKey
+-- Compiling entity ShiftRow
+-- Compiling architecture ShiftRow_arch of ShiftRow
 
 } {} {}}

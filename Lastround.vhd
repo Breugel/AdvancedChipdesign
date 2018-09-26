@@ -2,21 +2,21 @@ library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 
-entity Round is
+entity Lastround is
 	Port(	Key_in		: in std_logic_vector(127 downto 0);
 		Data_in		: in std_logic_vector(127 downto 0);
-		clk		: in std_logic;
-		reset		: in std_logic;
-		roundcounter	: in STD_LOGIC_VECTOR(3 downto 0);
+		clk			: in std_logic;
+		reset			: in std_logic;
+		roundcounter		: in STD_LOGIC_VECTOR(3 downto 0);
 		ce		: in std_logic;
 			
 		
 		Data_out	: out std_logic_vector(127 downto 0)
 	);
-end Round;
+end Lastround;
 
 
-architecture Logic of Round is 
+architecture Logic of Lastround is 
 	component Keyscheduler is 
 		port(	roundcounter:	in STD_LOGIC_VECTOR(3 downto 0);
 			clock:		in std_logic; 
@@ -58,11 +58,10 @@ architecture Logic of Round is
 	signal keyout, ARK_out, SB_out, SR_out : std_logic_vector(127 downto 0);
 
 begin 
-	
 	part1	: Keyscheduler	port map (roundcounter, clk, reset, ce, Key_in, keyout);
 	part2	: AddRoundKey	port map (keyout, Data_in, ARK_out);
 	part3	: Subbytes	port map (ARK_out, SB_out);
-	part4	: ShiftRow	port map (SB_out, SR_out);
-	part5	: MixColumn	port map (SR_out, Data_out);
+	part4	: ShiftRow	port map (SB_out, Data_out);
+	
 
 end Logic;
