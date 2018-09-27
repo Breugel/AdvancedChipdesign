@@ -42,14 +42,14 @@ begin
 		begin
 			if State = "01" then				-- eerste rondje
 				data_round_in <= data_in;
-			else if State = "10" then			-- loop till nine
+			elsif State = "10" then			-- loop till nine
 				data_round_in <= data_output_mc;
-			else if State = "11" then			-- out loop
+			elsif State = "11" then			-- out loop
 				data_round_in <= data_output_mc;
 				Data_out <= data_output_SR;
-			else if State = "00" then
+			elsif State = "00" then
 				Data_out <= (others => '0');
-			else
+			
 			end if;
 		end process;
 

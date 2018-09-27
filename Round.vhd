@@ -11,7 +11,8 @@ entity Round is
 		ce		: in std_logic;
 			
 		
-		Data_out	: out std_logic_vector(127 downto 0)
+		Round_out	: out std_logic_vector(127 downto 0);
+		RoundTussen	: out std_logic_vector(127 downto 0)
 	);
 end Round;
 
@@ -55,14 +56,16 @@ architecture Logic of Round is
 	end component;
 
 
-	signal keyout, ARK_out, SB_out, SR_out : std_logic_vector(127 downto 0);
+	signal keyout_signal, ARK_out_signal, SB_out_signal, SR_out_signal : std_logic_vector(127 downto 0);
 
 begin 
 	
-	part1	: Keyscheduler	port map (roundcounter, clk, reset, ce, Key_in, keyout);
-	part2	: AddRoundKey	port map (keyout, Data_in, ARK_out);
-	part3	: Subbytes	port map (ARK_out, SB_out);
-	part4	: ShiftRow	port map (SB_out, SR_out);
-	part5	: MixColumn	port map (SR_out, Data_out);
+	part1	: Keyscheduler	port map (roundcounter, clk, reset, ce, Key_in, keyout_signal);
+	part2	: AddRoundKey	port map (keyout_signal, Data_in, ARK_out_signal);
+	part3	: Subbytes	port map (ARK_out_signal, SB_out_signal);
+	part4	: ShiftRow	port map (SB_out_signal, SR_out_signal);
+	part5	: MixColumn	port map (SR_out_signal, Round_out);
+	
+	RoundTussen <= SR_out_signal;
 
 end Logic;

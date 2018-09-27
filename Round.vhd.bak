@@ -5,13 +5,14 @@ use IEEE.std_logic_unsigned.all;
 entity Round is
 	Port(	Key_in		: in std_logic_vector(127 downto 0);
 		Data_in		: in std_logic_vector(127 downto 0);
-		clk			: in std_logic;
-		reset			: in std_logic;
-		roundcounter		: in STD_LOGIC_VECTOR(3 downto 0);
+		clk		: in std_logic;
+		reset		: in std_logic;
+		roundcounter	: in STD_LOGIC_VECTOR(3 downto 0);
 		ce		: in std_logic;
 			
 		
-		Data_out	: out std_logic_vector(127 downto 0)
+		Round_out	: out std_logic_vector(127 downto 0);
+		RoundTussen	: out std_logic_vector(127 downto 0)
 	);
 end Round;
 
@@ -63,6 +64,8 @@ begin
 	part2	: AddRoundKey	port map (keyout, Data_in, ARK_out);
 	part3	: Subbytes	port map (ARK_out, SB_out);
 	part4	: ShiftRow	port map (SB_out, SR_out);
-	part5	: MixColumn	port map (SR_out, Data_out);
+	part5	: MixColumn	port map (SR_out, Round_out);
+	
+	RoundTussen <= SR_out;
 
 end Logic;
