@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use STD.textio.all;
 use ieee.std_logic_textio.all;
 
-library PKG_AES128;
+library work;
 use work.PKG_AES128.ALL;
 
 entity AES128_tb is

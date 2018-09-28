@@ -29,7 +29,7 @@ architecture logica of Controlepad is
 	signal nextState: FSM_type; 
 	
 	--/signals
-
+    signal FSMctrCE : STD_LOGIC;
 
 
 begin	-- Begin van de "logica"
@@ -57,57 +57,81 @@ end process;
 
 FSM_nextstate: process (curState, ce, roundcounter_signal )
 begin
-	
+		nextState <= curState;
 		case curState is
 			
 				when initialize => 
 					if(ce = '1') then
-						roundcounter_signal <= (others => '0');
+						--roundcounter_signal <= (others => '0');
 						nextState <= first_round;
 					end if;
 				when first_round =>
 					if(ce = '1') then
-						roundcounter_signal <= roundcounter_signal + 1;
+						--roundcounter_signal <= roundcounter_signal + 1;
 						nextState <= loop_till_nine; 
 					end if;
 		 		when loop_till_nine =>
 					if(ce = '1') then
-						if (roundcounter_signal < 10) and (roundcounter_signal >= 1) then
-							roundcounter_signal <= roundcounter_signal + 1;
-						else
-							nextState <= out_loop;
+					    if roundcounter_signal = 9 then
+						    nextState <= out_loop;
 						end if;
+						--if (roundcounter_signal < 10) and (roundcounter_signal >= 1) then
+						--	roundcounter_signal <= roundcounter_signal + 1;
+						--else
+						--	nextState <= out_loop;
+						--end if;
 					end if;
 		 		when out_loop =>
 					if( ce = '0') then
 						nextState <= initialize;
 					end if;
+				when others =>
+					--roundcounter_signal <= (others => '0');
+					nextState <= intialize;
+				
 		end case;
 end process;
 
+PCTR: process(reset, clock)
+begin
+  if reset = '1' then 
+    roundcounter_signal <= (others => '0');
+  elsif rising_edge(clock) then
+    if FSMctrCE = '1' then 
+	  roundcounter_signal <= roundcounter_signal + 1;
+	else
+	  roundcounter_signal <= (others => '0');
+	end if;
+  end if;
+end process;
 
-FSM_output: process(curState, clk)	-- Moet hier wel een klok in de sensitivity list??
+
+FSM_output: process(curState)	-- Moet hier wel een klok in de sensitivity list??
 begin
 	case curState is
 		when initialize =>
 			done <= '0';
 			roundcounter_out <= (others => '0');
 			mux_state <= "00";
+			FSMctrCE <= '0';
 
 		when first_round =>
 			done <= '0'; 
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "01";
-	
+			FSMctrCE <= '1';
 		when loop_till_nine =>
 			done <= '0';
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "10";
-			
+			FSMctrCE <= '1';
 		when out_loop =>
 			done <= '1'; 
 			roundcounter_out <= roundcounter_signal;
-			mux_state <= "11";	
+			mux_state <= "11";
+			FSMctrCE <= '0';
+        when others =>
+		
 	end case;
 end process; 
 

@@ -38,7 +38,7 @@ signal data_round_in, data_output_mc,data_output_SR : std_logic_vector (127 down
 
 begin 
 
-	program: process (State, data_output_SR, data_in)
+	program: process (State, data_in)
 		begin
 			if State = "01" then				-- eerste rondje
 				data_round_in <= data_in;

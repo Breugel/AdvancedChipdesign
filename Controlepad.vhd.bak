@@ -50,7 +50,7 @@ FSM_switchstate: process(reset, clk)
 begin
 	if (reset = '1') then
 		curState <= initialize; 
-	else if (rising_edge(clk)) then
+	elsif (rising_edge(clk)) then
 		curState <= nextState; 
 	end if;
 end process;
