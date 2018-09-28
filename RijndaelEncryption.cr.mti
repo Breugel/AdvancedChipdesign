@@ -1,4 +1,14 @@
-C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd
+C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Controlepad.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Controlepad
+-- Compiling architecture logica of Controlepad
+
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Lastround.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -8,7 +18,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Lastround
 -- Compiling architecture Logic of Lastround
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -18,7 +28,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity AES128
 -- Compiling architecture Logic of AES128
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Keyscheduler.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -28,7 +38,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Keyscheduler
 -- Compiling architecture Behavioral of Keyscheduler
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Round.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -38,7 +48,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Round
 -- Compiling architecture Logic of Round
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Subbytes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\Subbytes.vhd}
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Subbytes.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Subbytes.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -46,7 +56,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Subbytes
 -- Compiling architecture program of Subbytes
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/mixcolumn.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -54,7 +64,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity MixColumn
 -- Compiling architecture MixColumn_arch of MixColumn
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/bytesub.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\bytesub.vhd}
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/PKG_AES128.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\PKG_AES128.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_textio
+-- Compiling package PKG_AES128
+-- Compiling package body PKG_AES128
+-- Loading package PKG_AES128
+
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/bytesub.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/bytesub.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -62,7 +82,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ByteSub
 -- Compiling architecture internals of ByteSub
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/shiftrow.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\shiftrow.vhd}
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/shiftrow.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/shiftrow.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -70,7 +90,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ShiftRow
 -- Compiling architecture ShiftRow_arch of ShiftRow
 
-} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -79,21 +99,18 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package STD_LOGIC_UNSIGNED
 -- Compiling entity Datapad
 -- Compiling architecture Logica of Datapad
-** Error: C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd(54): near "process": (vcom-1576) expecting IF.
-** Error: C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd(71): Illegal sequential statement.
-** Error: C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/Datapad.vhd(73): near "Logica": (vcom-1576) expecting IF.
 
-} {10.0 13.0} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128_tb.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128_tb.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\robbe\Documents\UHasselt\2018-2019\AdvancedChipdesign\AES128_tb.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package std_logic_textio
-** Error: C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128_tb.vhd(7): (vcom-1598) Library "pkg_aes128" not found.
 -- Loading package PKG_AES128
-** Error: C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AES128_tb.vhd(10): VHDL Compiler exiting
+-- Compiling entity AES128_tb
+-- Compiling architecture Behavioural of AES128_tb
 
-} {7.0 8.0 9.0 10.0} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd
+} {} {}} C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd {1 {vcom -work PKG_AES128 -2002 -explicit -stats=none C:/Users/robbe/Documents/UHasselt/2018-2019/AdvancedChipdesign/AddRoundKey.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
