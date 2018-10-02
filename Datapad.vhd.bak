@@ -38,20 +38,22 @@ signal data_round_in, data_output_mc,data_output_SR : std_logic_vector (127 down
 
 begin 
 
-	program: process (State, data_output_SR, data_in)
+	program: process (State)
 		begin
-			if State = "01" then				-- eerste rondje
+		
+		case State is 
+			when "01" =>				-- eerste rondje
 				data_round_in <= data_in;
-			elsif State = "10" then			-- loop till nine
+			when  "10" =>			-- loop till nine
 				data_round_in <= data_output_mc;
-			elsif State = "11" then			-- out loop
+			when "11" =>			-- out loop
 				data_round_in <= data_output_mc;
 				Data_out <= data_output_SR;
-			elsif State = "00" then
-				Data_out <= (others => '0');
-			
-			end if;
-		end process;
+			when "00" =>
+				Data_out <= (others => '0'); 
+			when others => Data_out <= (others => '1'); 
+		end case;
+	end process;
 
 
 

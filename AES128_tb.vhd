@@ -155,7 +155,8 @@ begin
     ce <= '1';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
-    ce <= '0';
+    wait for clock_period;
+	 ce <= '0';
     wait for clock_period*10;
     
     -- T8: 2 TestVectors consecutive on nominal operation
@@ -165,6 +166,7 @@ begin
     ce <= '1';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
+	 wait for clock_period;
     ce <= '0';
     wait for clock_period*10;
     
@@ -179,6 +181,7 @@ begin
     ce <= '1';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 4; end if;
+	 wait for clock_period;
     ce <= '0';
     wait for clock_period*10;
     
@@ -189,11 +192,13 @@ begin
     ce <= '1';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
-    ce <= '0';
+    wait for clock_period;
+	 ce <= '0';
     wait for clock_period;
     ce <= '1';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 2; end if;
+	 wait for clock_period;
     ce <= '0';
     wait for clock_period*10;
     
@@ -208,6 +213,7 @@ begin
     reset <= '0';
     wait until done = '1';
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
+	 wait for clock_period;
     ce <= '0';
     wait for clock_period*10;
     
@@ -219,6 +225,7 @@ begin
         ce <= '1';
         wait until done = '1';
         if(data_out /= tvcatalog(i-100).output) then testreport(testnumber) <= testreport(testnumber) + 1; end if;
+		  wait for clock_period;
         ce <= '0';
         wait for clock_period;
     end loop;
