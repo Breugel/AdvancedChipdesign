@@ -10,6 +10,8 @@ entity Controlepad is
 			done		: out std_logic;
 			roundcounter_out: out std_logic_vector(3 downto 0);
 			mux_state	: out std_logic_vector(1 downto 0)
+			----finalround_flag	: out std_logic
+			
 		);
 end entity;
 
@@ -81,10 +83,11 @@ begin
   if reset = '1' then 
     roundcounter_signal <= (others => '0');  
   elsif rising_edge(clk) then				-- in een bepaalde state worden meerdere klokcycles gebruikt, gaan wij dan niet bv 20 keer optellen in een state?
-    if FSMctrCE = '1' then 
+    if FSMctrCE = '1' or nextState = first_round then 
 	  roundcounter_signal <= roundcounter_signal + 1;
 	else
 	  roundcounter_signal <= (others => '0');
+	
 	end if;
   end if;
 end process;
@@ -98,30 +101,36 @@ begin
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "00";
 			FSMctrCE <= '0';
+			--finalround_flag <= '0';
 
 		when first_round =>
 			done <= '0'; 
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "01";
 			FSMctrCE <= '1';
+			--finalround_flag <= '0';
 		when loop_till_nine =>
 			done <= '0';
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "10";
 			FSMctrCE <= '1';
+			--finalround_flag <= '0';
 		when out_loop =>
 			done <= '1'; 
 			roundcounter_out <= roundcounter_signal;
 			mux_state <= "11";
 			FSMctrCE <= '0';
+			--finalround_flag <= '1';
         when others =>
 			done <= '0';
 			roundcounter_out <= (others => '0');
 			mux_state <= "00";
 			FSMctrCE <= '0';
+			--finalround_flag <= '0';
 	end case;
 end process; 
 
 
 end logica;
+
 

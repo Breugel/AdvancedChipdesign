@@ -1,7 +1,3 @@
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
 entity Exor is 
     Port ( exor_in : in STD_LOGIC_VECTOR (127 downto 0);
            key_in : in STD_LOGIC_VECTOR (127 downto 0);

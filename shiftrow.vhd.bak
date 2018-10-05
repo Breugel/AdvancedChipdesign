@@ -7,7 +7,7 @@ entity ShiftRow is
 end entity;
 
 architecture ShiftRow_arch of ShiftRow is
-begin
+begin--------------
 
   process(shiftrow_in)
   begin
@@ -29,5 +29,4 @@ begin
       shiftrow_out(7 downto 0) <= shiftrow_in(39 downto 32); --15 <- 11
   end process;
 end;
-
 

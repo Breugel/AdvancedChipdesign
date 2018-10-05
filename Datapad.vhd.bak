@@ -1,4 +1,3 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
@@ -11,6 +10,7 @@ entity Datapad is
 		Key_in:		in std_logic_vector(127 downto 0);
 		ce:		in std_logic;
 		roundcounter_in:in std_logic_vector(3 downto 0);
+		--finalround_flag_data:in std_logic;
 		
 		Data_out:	out std_logic_vector(127 downto 0)
 		);
@@ -28,34 +28,48 @@ Architecture Logica of Datapad is
 			
 		
 		Round_out	: out std_logic_vector(127 downto 0);	-- MC_out
-		RoundTussen	: out std_logic_vector(127 downto 0)	-- SR_out
+		RoundTussen	: out std_logic_vector(127 downto 0);	-- SR_out
+		ARK_out		: out std_logic_vector(127 downto 0)
 		);
 	end component;
 
-signal data_round_in, data_output_mc,data_output_SR : std_logic_vector (127 downto 0);
+signal data_round_in, data_output_mc,data_output_SR, data_output_ark : std_logic_vector (127 downto 0);
+signal output_register : std_logic_vector(127 downto 0);
 
 
 
 begin 
 
-	program: process (State)
+	program: process (State, data_in, output_register, data_output_SR)
 		begin
 		
 		case State is 
 			when "01" =>				-- eerste rondje
 				data_round_in <= data_in;
 			when  "10" =>			-- loop till nine
-				data_round_in <= data_output_mc;
+				data_round_in <= output_register;
 			when "11" =>			-- out loop
-				data_round_in <= data_output_mc;
+				data_round_in <= output_register;
 				Data_out <= data_output_SR;
 			when "00" =>
 				Data_out <= (others => '0'); 
-			when others => Data_out <= (others => '1'); 
+			when others => Data_out <= (others => '0'); 
 		end case;
 	end process;
 
 
+
+reg: process(clk, reset)
+begin
+	if (reset = '1') then
+		output_register <= (others => '0');
+	
+	elsif (rising_edge(clk)) then
+
+		output_register <= data_output_mc;
+	end if;
+
+end process;
 
 
 
@@ -69,9 +83,11 @@ rondje: Round port map (
 			
 		
 		Round_out	=>	data_output_mc,
-		RoundTussen	=>	data_output_SR
+		RoundTussen	=>	data_output_SR,
+		ARK_out		=> 	data_output_ark
 );
 
 end Logica;
+
 
 
