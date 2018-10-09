@@ -1,136 +1,170 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use IEEE.std_logic_unsigned.all;
-
-entity Controlepad is 
-	port (		clk		: in std_logic;
-			reset		: in std_logic;
-			ce		: in std_logic;
-
-			done		: out std_logic;
-			roundcounter_out: out std_logic_vector(3 downto 0);
-			mux_state	: out std_logic_vector(1 downto 0)
-			----finalround_flag	: out std_logic
-			
-		);
-end entity;
-
-
-architecture logica of Controlepad is
-
-	type FSM_type is
-	(	initialize,
-		first_round,
-	 	loop_till_nine,
-	 	out_loop);
-
-
-	--signals
-	signal roundcounter_signal: std_logic_vector(3 downto 0); --moeten tot 9 kunnen tellen
-	signal curState: FSM_type;
-	signal nextState: FSM_type; 
-	
-	--/signals
-    signal FSMctrCE : STD_LOGIC;
-
-
-begin	-- Begin van de "logica"
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_unsigned.ALL;
 
 
 
+entity control_p is
+    Port ( 
+        reset : in STD_LOGIC;
+        clock : in STD_LOGIC;
+        done: out STD_LOGIC;
+        ce: in STD_LOGIC;
+        roundcounter_out: out STD_LOGIC_VECTOR(3 downto 0);
+        MpReg : out STD_LOGIC;
+        MpOut : out STD_LOGIC;
+        MpIn  : out STD_LOGIC
+       );
+end control_p;
 
+architecture Behavioral of control_p is
 
-FSM_switchstate: process(reset, clk)
+  type tStates is (idle,round_till_nine, last_round, after_encrypt,first_round);
+  signal curState, nxtState : tStates;
+  signal roundcounter_signal: STD_LOGIC_VECTOR(3 downto 0);  
+  signal multiplex_state: STD_LOGIC_VECTOR(2 downto 0);
+  signal FSMctrCE : STD_LOGIC;
+
 begin
-	if (reset = '1') then
-		curState <= initialize; 
-	elsif (rising_edge(clk)) then
-		curState <= nextState; 
-	end if;
+
+
+FSM_switchstate : process (reset, clock,ce)
+begin
+  
+    if reset = '1' then 
+        curState <= idle;
+    elsif (rising_edge(clock)) then 
+        curState <= nxtState; 
+    end if;
+    
 end process;
 
-FSM_nextstate: process (curState, ce , roundcounter_signal)
-begin
-		nextState <= curState;
-		case curState is
-			
-				when initialize => 
-					if(ce = '1') then
-						nextState <= first_round;
-					end if;
-				when first_round =>
-					if(ce = '1') then
-						nextState <= loop_till_nine; 
-					end if;
-		 		when loop_till_nine =>
-					if(ce = '1') then
-					    if roundcounter_signal = 9 then
-						    nextState <= out_loop;
-						end if;
-					end if;
-		 		when out_loop =>
-					if( ce = '0') then
-						nextState <= initialize;
-					end if;
-				when others =>
-					nextState <= initialize;
-				
-		end case;
+
+
+
+FSM_nextstate : process (curState,ce,roundcounter_signal)
+  begin
+      nxtState <= curState;
+      case curState is
+        
+                when idle =>
+                      if (ce = '1') then
+                            nxtState <= first_round;
+                      end if;
+            
+                when first_round =>
+                      if  ce = '1' and roundcounter_signal = 1 then   -- kan een if else van gemaakt worden ipv een if elsif
+                            nxtState <= round_till_nine;
+
+                      end if;
+                     
+                when round_till_nine =>
+                      if(ce = '1')then
+                          if roundcounter_signal = 9 then
+                            nxtState <= last_round;
+                          end if;
+                      end if;
+                      
+                      
+                when last_round =>
+                      if(ce = '1')then
+                          if roundcounter_signal = 10 then
+                            nxtState <= after_encrypt;
+                          end if; 
+                      end if;
+                      
+                when after_encrypt =>
+                  
+                      if  ce = '0' then 
+                            nxtState <=  idle;
+                      end if;
+         
+                when others =>
+                      nxtState <= idle;
+    end case;
+    
 end process;
-
-PCTR: process(reset, clk)
+  
+  
+PCTR: process(reset, clock,ce,FSMctrCE)
 begin
-  if reset = '1' then 
-    roundcounter_signal <= (others => '0');  
-  elsif rising_edge(clk) then				-- in een bepaalde state worden meerdere klokcycles gebruikt, gaan wij dan niet bv 20 keer optellen in een state?
-    if FSMctrCE = '1' or nextState = first_round then 
-	  roundcounter_signal <= roundcounter_signal + 1;
-	else
-	  roundcounter_signal <= (others => '0');
-	
-	end if;
-  end if;
-end process;
- 
-
-FSM_output: process(curState, roundcounter_signal)	-- Moet hier wel een klok in de sensitivity list??
-begin
-	case curState is
-		when initialize =>
-			done <= '0';
-			roundcounter_out <= roundcounter_signal;
-			mux_state <= "00";
-			FSMctrCE <= '0';
-			--finalround_flag <= '0';
-
-		when first_round =>
-			done <= '0'; 
-			roundcounter_out <= roundcounter_signal;
-			mux_state <= "01";
-			FSMctrCE <= '1';
-			--finalround_flag <= '0';
-		when loop_till_nine =>
-			done <= '0';
-			roundcounter_out <= roundcounter_signal;
-			mux_state <= "10";
-			FSMctrCE <= '1';
-			--finalround_flag <= '0';
-		when out_loop =>
-			done <= '1'; 
-			roundcounter_out <= roundcounter_signal;
-			mux_state <= "11";
-			FSMctrCE <= '0';
-			--finalround_flag <= '1';
+  
+    if reset = '1' then 
+          roundcounter_signal <= (others => '0');
+    elsif rising_edge(clock) then
+          if FSMctrCE = '1' then 
+                  if ce = '1' and curState /= after_encrypt and roundcounter_signal < 11 then
+                         roundcounter_signal <= roundcounter_signal + 1;
+                  end if;
+          else
+                  roundcounter_signal <= (others => '0');
+          end if;
+    end if;
+  end process;
+  
+  
+  FSM_output : process (curState,roundcounter_signal)
+    begin
+      case curState is
+      
+         when idle =>
+                done <= '0';     
+                multiplex_state <= "000";
+                roundcounter_out <= (others => '0');    
+                FSMctrCE <= '0';
+                MpReg <= '0';  
+                MpOut <= '0';
+                MpIn <= '0';  
+                                 
+        when first_round =>
+                done <= '0';     
+                multiplex_state <= "001";
+                roundcounter_out <= roundcounter_signal;    
+                FSMctrCE <= '1';
+                MpReg <= '0';
+                MpOut <= '0';
+                MpIn <= '0';  
+                 
+        when round_till_nine =>
+                done <= '0';     
+                multiplex_state <= "010";
+                roundcounter_out <= roundcounter_signal;    
+                FSMctrCE <= '1';
+                MpReg <= '0';
+                MpOut <= '0';
+                MpIn <= '1';
+                
+        when last_round =>
+                done <= '0';     
+                multiplex_state <= "011";
+                roundcounter_out <= roundcounter_signal;    
+                FSMctrCE <= '1';
+                MpReg <= '1';
+                MpOut <= '0';
+                MpIn <= '1';         
+                    
+                 
+        when after_encrypt => 
+                done <= '1';     
+                multiplex_state <= "100";
+                roundcounter_out <= roundcounter_signal;    
+                FSMctrCE <= '0';
+                MpReg <= '1';   
+                MpOut <= '1';
+                MpIn <= '1';    
+                          
         when others =>
-			done <= '0';
-			roundcounter_out <= (others => '0');
-			mux_state <= "00";
-			FSMctrCE <= '0';
-			--finalround_flag <= '0';
-	end case;
-end process; 
-
-
-end logica;
-
-
+                done <= '0';     
+                multiplex_state <= "000";
+                roundcounter_out <= (others => '0');    
+                FSMctrCE <= '0';
+                MpReg <= '0';
+                MpOut <= '0';
+                MpIn <= '0'; 
+  
+        
+      end case;
+    end process;
+  
+      roundcounter_out <= roundcounter_signal;
+  end Behavioral;

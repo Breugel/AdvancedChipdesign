@@ -1,93 +1,100 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use IEEE.std_logic_unsigned.all;
-
-entity Datapad is 
-	port (	State:		in std_logic_vector (1 downto 0);
-		clk:		in std_logic;	
-		reset:		in std_logic;
-		Data_in:	in std_logic_vector(127 downto 0);
-		Key_in:		in std_logic_vector(127 downto 0);
-		ce:		in std_logic;
-		roundcounter_in:in std_logic_vector(3 downto 0);
-		--finalround_flag_data:in std_logic;
-		
-		Data_out:	out std_logic_vector(127 downto 0)
-		);
-end Datapad;
-
-
-Architecture Logica of Datapad is 
-	component Round is port(
-		Key_in		: in std_logic_vector(127 downto 0);
-		Data_in		: in std_logic_vector(127 downto 0);
-		clk		: in std_logic;
-		reset		: in std_logic;
-		roundcounter	: in STD_LOGIC_VECTOR(3 downto 0);
-		ce		: in std_logic;
-			
-		
-		Round_out	: out std_logic_vector(127 downto 0);	-- MC_out
-		RoundTussen	: out std_logic_vector(127 downto 0);	-- SR_out
-		ARK_out		: out std_logic_vector(127 downto 0)
-		);
-	end component;
-
-signal data_round_in, data_output_mc,data_output_SR, data_output_ark : std_logic_vector (127 downto 0);
-signal output_register : std_logic_vector(127 downto 0);
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_unsigned.ALL;
 
 
 
-begin 
+entity data_path is
+    Port ( clock : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           data_in : in STD_LOGIC_VECTOR (127 downto 0);
+           ce: in STD_LOGIC;
+           MpReg: in STD_LOGIC;
+           MpOut : in STD_LOGIC;
+           MpIn  : in STD_LOGIC;
+           data_out : out STD_LOGIC_VECTOR (127 downto 0);
+           round_counter: in STD_LOGIC_VECTOR(3 downto 0);
+           key_in : in STD_LOGIC_VECTOR (127 downto 0));
+           
+end data_path;
 
-	program: process (State, data_in, output_register, data_output_SR)
-		begin
-		
-		case State is 
-			when "01" =>				-- eerste rondje
-				data_round_in <= data_in;
-			when  "10" =>			-- loop till nine
-				data_round_in <= output_register;
-			when "11" =>			-- out loop
-				data_round_in <= output_register;
-				Data_out <= data_output_SR;
-			when "00" =>
-				Data_out <= (others => '0'); 
-			when others => Data_out <= (others => '0'); 
-		end case;
-	end process;
+architecture Behavioral of data_path is
 
 
+signal data_round_in :  STD_LOGIC_VECTOR (127 downto 0);
+signal data_after_round,data_round_tussen,data_after_reg,data_out_ARK,data_out_signal :STD_LOGIC_VECTOR (127 downto 0);
 
-reg: process(clk, reset)
+component round is
+    Port ( round_in :       in STD_LOGIC_VECTOR (127 downto 0);
+           key_in:          in STD_LOGIC_VECTOR (127 downto 0);
+           enable:          in STD_LOGIC;
+           reset:           in STD_LOGIC;
+           clock :         in STD_LOGIC;
+           round_counter:  in STD_LOGIC_VECTOR (3 downto 0);
+           round_tussen:      out STD_LOGIC_VECTOR (127 downto 0); 
+           data_out_ARK: out STD_LOGIC_VECTOR (127 downto 0); 
+           round_out : out STD_LOGIC_VECTOR (127 downto 0));
+end component;
+
+
+
 begin
-	if (reset = '1') then
-		output_register <= (others => '0');
-	
-	elsif (rising_edge(clk)) then
+  
 
-		output_register <= data_output_mc;
-	end if;
 
+      
+mux_data_in: process (MpIn,data_after_reg,data_in)
+begin
+           if  MpIn = '1' then 
+               data_round_in <= data_after_reg;
+           else 
+                data_round_in <= data_in;
+           end if;
+           
+end process;
+
+mux_data_out: process (MpOut,data_round_tussen)
+begin
+           if  MpOut = '1' then 
+               data_out <= data_out_ARK;
+
+           else 
+                data_out <= (others => '0');
+           end if;
+           
 end process;
 
 
 
-rondje: Round port map ( 
-		Key_in		=>	Key_in,
-		Data_in		=>	data_round_in,
-		clk		=>	clk,
-		reset		=>	reset,
-		roundcounter	=>	roundcounter_in,
-		ce		=>	ce,
-			
-		
-		Round_out	=>	data_output_mc,
-		RoundTussen	=>	data_output_SR,
-		ARK_out		=> 	data_output_ark
-);
-
-end Logica;
 
 
+reg2: process (reset, clock)
+begin
+  
+           if (reset = '1') then
+             data_after_reg <= (others => '0');
+           elsif (rising_edge(clock)) then 
+                if(round_counter < 11 and ce = '1') then
+                    if(MpReg = '0') then
+                         data_after_reg <= data_after_round;
+                    else
+                         data_after_reg <= data_round_tussen;
+                  end if; 
+              end if; 
+          end if;     
+end process;
 
+
+
+        
+     
+
+ Rd1: round port map (data_round_in, key_in, ce, reset, clock,round_counter,data_round_tussen, data_out_ARK,data_after_round);
+ 
+
+ 
+
+           
+   
+
+end Behavioral;
